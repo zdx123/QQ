@@ -29,14 +29,16 @@
 		var box=$("#box");
 		var divs=$("#box div");
 		var n=0;
-		box.on("swipeLeft",function(){
+		box.on("swipeLeft",function(ev){
+			ev.preventDefault;
 			n++;
 			if(n==divs.length){
 				n=divs.length-1;
 			}
 			box.css("transform","translate3d(-"+n*innerWidth+"px,0,0)");
 		})
-		box.on("swipeRight",function(){
+		box.on("swipeRight",function(ev){
+			ev.preventDefault;
 			n--
 			if(n<0){
 				n=0;
